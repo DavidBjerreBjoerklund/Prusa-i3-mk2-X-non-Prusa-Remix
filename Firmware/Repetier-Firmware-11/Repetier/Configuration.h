@@ -409,7 +409,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define KEEP_ALIVE_INTERVAL 2000
 #define WAITING_IDENTIFIER "wait"
 #define ECHO_ON_EXECUTE 1
-#define EEPROM_MODE 2
+#define EEPROM_MODE 1
 #undef PS_ON_PIN
 #define PS_ON_PIN -1
 #define JSON_OUTPUT 0
@@ -466,7 +466,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_Y2 20
 #define Z_PROBE_X3 100
 #define Z_PROBE_Y3 160
-#define BED_LEVELING_METHOD 0
+#define BED_LEVELING_METHOD 1
 #define BED_CORRECTION_METHOD 0
 #define BED_LEVELING_GRID_SIZE 5
 #define BED_LEVELING_REPETITIONS 5
@@ -566,7 +566,7 @@ Values must be in range 1..255
     "zStepsPerMM": 3200,
     "xInvert": "0",
     "xInvertEnable": "1",
-    "eepromMode": 2,
+    "eepromMode": 1,
     "yInvert": "1",
     "yInvertEnable": "1",
     "zInvert": "0",
@@ -1086,7 +1086,7 @@ Values must be in range 1..255
     "cncDirectionCW": "1",
     "startupGCode": "",
     "jsonOutput": "0",
-    "bedLevelingMethod": 0,
+    "bedLevelingMethod": 1,
     "bedCorrectionMethod": 0,
     "bedLevelingGridSize": 5,
     "bedLevelingRepetitions": 5,
