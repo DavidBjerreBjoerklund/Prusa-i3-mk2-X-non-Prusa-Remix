@@ -65,8 +65,8 @@
 #define MIXING_EXTRUDER 0
 
 #define DRIVE_SYSTEM 0
-#define XAXIS_STEPS_PER_MM 658.44
-#define YAXIS_STEPS_PER_MM 658.44
+#define XAXIS_STEPS_PER_MM 672.27
+#define YAXIS_STEPS_PER_MM 672.27
 #define ZAXIS_STEPS_PER_MM 3200
 #define EXTRUDER_FAN_COOL_TEMP 50
 #define PDM_FOR_EXTRUDER 0
@@ -276,7 +276,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define ENDSTOP_Z_RETEST_REDUCTION_FACTOR 3
 #define ENDSTOP_X_BACK_ON_HOME -8
 #define ENDSTOP_Y_BACK_ON_HOME -2.8
-#define ENDSTOP_Z_BACK_ON_HOME 1
+#define ENDSTOP_Z_BACK_ON_HOME 0.46
 #define ALWAYS_CHECK_ENDSTOPS 0
 #define MOVE_X_WHEN_HOMED 0
 #define MOVE_Y_WHEN_HOMED 0
@@ -561,8 +561,8 @@ Values must be in range 1..255
     "baudrate": 115200,
     "bluetoothSerial": -1,
     "bluetoothBaudrate": 115200,
-    "xStepsPerMM": 658.44,
-    "yStepsPerMM": 658.44,
+    "xStepsPerMM": 672.27,
+    "yStepsPerMM": 672.27,
     "zStepsPerMM": 3200,
     "xInvert": "0",
     "xInvertEnable": "1",
@@ -689,7 +689,7 @@ Values must be in range 1..255
     "zHomeDir": "-1",
     "xEndstopBack": -8,
     "yEndstopBack": -2.8,
-    "zEndstopBack": 1,
+    "zEndstopBack": 0.46,
     "deltaSegmentsPerSecondPrint": 180,
     "deltaSegmentsPerSecondTravel": 70,
     "deltaDiagonalRod": 445,
