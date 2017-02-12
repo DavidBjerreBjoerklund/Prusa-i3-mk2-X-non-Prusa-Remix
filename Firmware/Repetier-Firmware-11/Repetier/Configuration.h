@@ -300,7 +300,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define X_MAX_LENGTH 185
 #define Y_MAX_LENGTH 200
 #define Z_MAX_LENGTH 120
-#define X_MIN_POS -18
+#define X_MIN_POS 0
 #define Y_MIN_POS -3
 #define Z_MIN_POS 0
 #define Z2_MINMAX_PIN -1
@@ -409,7 +409,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define KEEP_ALIVE_INTERVAL 2000
 #define WAITING_IDENTIFIER "wait"
 #define ECHO_ON_EXECUTE 1
-#define EEPROM_MODE 0
+#define EEPROM_MODE 2
 #undef PS_ON_PIN
 #define PS_ON_PIN -1
 #define JSON_OUTPUT 0
@@ -566,7 +566,7 @@ Values must be in range 1..255
     "zStepsPerMM": 3200,
     "xInvert": "0",
     "xInvertEnable": "1",
-    "eepromMode": 0,
+    "eepromMode": 2,
     "yInvert": "1",
     "yInvertEnable": "1",
     "zInvert": "0",
@@ -673,7 +673,7 @@ Values must be in range 1..255
     "backlashZ": 0,
     "stepperInactiveTime": 360,
     "maxInactiveTime": 0,
-    "xMinPos": -18,
+    "xMinPos": 0,
     "yMinPos": -3,
     "zMinPos": 0,
     "xLength": 185,
