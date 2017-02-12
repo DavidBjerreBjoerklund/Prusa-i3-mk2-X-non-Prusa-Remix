@@ -242,8 +242,8 @@ It also can add a delay to wait for spindle to run on full speed.
 #define ENDSTOP_PULLUP_Y_MIN false
 #define ENDSTOP_Y_MIN_INVERTING true
 #define MIN_HARDWARE_ENDSTOP_Y true
-#define ENDSTOP_PULLUP_Z_MIN true
-#define ENDSTOP_Z_MIN_INVERTING true
+#define ENDSTOP_PULLUP_Z_MIN false
+#define ENDSTOP_Z_MIN_INVERTING false
 #define MIN_HARDWARE_ENDSTOP_Z true
 #define ENDSTOP_PULLUP_Z2_MINMAX true
 #define ENDSTOP_Z2_MINMAX_INVERTING false
@@ -286,21 +286,21 @@ It also can add a delay to wait for spindle to run on full speed.
 
 #define X_ENABLE_ON 1
 #define Y_ENABLE_ON 1
-#define Z_ENABLE_ON 0
+#define Z_ENABLE_ON 1
 #define DISABLE_X 0
 #define DISABLE_Y 0
 #define DISABLE_Z 0
 #define DISABLE_E 0
 #define INVERT_X_DIR 0
 #define INVERT_Y_DIR 1
-#define INVERT_Z_DIR 1
+#define INVERT_Z_DIR 0
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
-#define X_MAX_LENGTH 200
+#define X_MAX_LENGTH 185
 #define Y_MAX_LENGTH 200
 #define Z_MAX_LENGTH 120
-#define X_MIN_POS 0
+#define X_MIN_POS -18
 #define Y_MIN_POS -3
 #define Z_MIN_POS 0
 #define Z2_MINMAX_PIN -1
@@ -337,18 +337,18 @@ It also can add a delay to wait for spindle to run on full speed.
 #define MAX_INACTIVE_TIME 0L
 #define MAX_FEEDRATE_X 200
 #define MAX_FEEDRATE_Y 200
-#define MAX_FEEDRATE_Z 2
+#define MAX_FEEDRATE_Z 5
 #define HOMING_FEEDRATE_X 40
 #define HOMING_FEEDRATE_Y 40
-#define HOMING_FEEDRATE_Z 2
-#define HOMING_ORDER HOME_ORDER_XYZ
+#define HOMING_FEEDRATE_Z 5
+#define HOMING_ORDER HOME_ORDER_XYTZ
 #define ZHOME_PRE_RAISE 2
-#define ZHOME_PRE_RAISE_DISTANCE 10
+#define ZHOME_PRE_RAISE_DISTANCE 5
 #define ZHOME_MIN_TEMPERATURE 0
 #define ZHOME_HEAT_ALL 1
-#define ZHOME_HEAT_HEIGHT 20
+#define ZHOME_HEAT_HEIGHT 10
 #define ZHOME_X_POS 100
-#define ZHOME_Y_POS 128
+#define ZHOME_Y_POS 100
 #define ENABLE_BACKLASH_COMPENSATION 0
 #define X_BACKLASH 0
 #define Y_BACKLASH 0
@@ -441,18 +441,18 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define UI_BED_COATING 0
 #define FEATURE_Z_PROBE 1
 #define EXTRUDER_IS_Z_PROBE 0
-#define Z_PROBE_BED_DISTANCE 10
+#define Z_PROBE_BED_DISTANCE 5
 #define Z_PROBE_PIN ORIG_Z_MIN_PIN
 #define Z_PROBE_PULLUP 1
 #define Z_PROBE_ON_HIGH 1
 #define Z_PROBE_X_OFFSET 0
 #define Z_PROBE_Y_OFFSET -28.05
 #define Z_PROBE_WAIT_BEFORE_TEST 0
-#define Z_PROBE_SPEED 2
+#define Z_PROBE_SPEED 5
 #define Z_PROBE_XY_SPEED 150
 #define Z_PROBE_SWITCHING_DISTANCE 0.5
 #define Z_PROBE_REPETITIONS 3
-#define Z_PROBE_HEIGHT 1
+#define Z_PROBE_HEIGHT 0.46
 #define Z_PROBE_START_SCRIPT ""
 #define Z_PROBE_FINISHED_SCRIPT ""
 #define Z_PROBE_RUN_AFTER_EVERY_PROBE ""
@@ -569,8 +569,8 @@ Values must be in range 1..255
     "eepromMode": 0,
     "yInvert": "1",
     "yInvertEnable": "1",
-    "zInvert": "1",
-    "zInvertEnable": "0",
+    "zInvert": "0",
+    "zInvertEnable": "1",
     "extruder": [
         {
             "id": 0,
@@ -631,7 +631,7 @@ Values must be in range 1..255
     "uiController": 0,
     "xMinEndstop": 3,
     "yMinEndstop": 3,
-    "zMinEndstop": 1,
+    "zMinEndstop": 4,
     "xMaxEndstop": 0,
     "yMaxEndstop": 0,
     "zMaxEndstop": 0,
@@ -645,8 +645,8 @@ Values must be in range 1..255
     "yHomingSpeed": 40,
     "yTravelAcceleration": 1000,
     "yPrintAcceleration": 1000,
-    "zMaxSpeed": 2,
-    "zHomingSpeed": 2,
+    "zMaxSpeed": 5,
+    "zHomingSpeed": 5,
     "zTravelAcceleration": 100,
     "zPrintAcceleration": 100,
     "xMotor": {
@@ -673,10 +673,10 @@ Values must be in range 1..255
     "backlashZ": 0,
     "stepperInactiveTime": 360,
     "maxInactiveTime": 0,
-    "xMinPos": 0,
+    "xMinPos": -18,
     "yMinPos": -3,
     "zMinPos": 0,
-    "xLength": 200,
+    "xLength": 185,
     "yLength": 200,
     "zLength": 120,
     "alwaysCheckEndstops": "0",
@@ -772,7 +772,7 @@ Values must be in range 1..255
     "hasHeatedBed": "1",
     "enableZProbing": "1",
     "extrudeMaxLength": 160,
-    "homeOrder": "HOME_ORDER_XYZ",
+    "homeOrder": "HOME_ORDER_XYTZ",
     "featureController": 7,
     "uiPrinterName": "Prusa i3",
     "uiPrinterCompany": "Home made",
@@ -876,15 +876,15 @@ Values must be in range 1..255
     "fanThermoThermistorType": 1,
     "scalePidToMax": 0,
     "zProbePin": "ORIG_Z_MIN_PIN",
-    "zProbeBedDistance": 10,
+    "zProbeBedDistance": 5,
     "zProbePullup": "1",
     "zProbeOnHigh": "1",
     "zProbeXOffset": 0,
     "zProbeYOffset": -28.05,
     "zProbeWaitBeforeTest": "0",
-    "zProbeSpeed": 2,
+    "zProbeSpeed": 5,
     "zProbeXYSpeed": 150,
-    "zProbeHeight": 1,
+    "zProbeHeight": 0.46,
     "zProbeStartScript": "",
     "zProbeFinishedScript": "",
     "featureAutolevel": "1",
@@ -1048,8 +1048,8 @@ Values must be in range 1..255
     "manualConfig": "",
     "zHomeMinTemperature": 0,
     "zHomeXPos": 100,
-    "zHomeYPos": 128,
-    "zHomeHeatHeight": 20,
+    "zHomeYPos": 100,
+    "zHomeHeatHeight": 10,
     "zHomeHeatAll": "1",
     "zProbeZOffsetMode": 0,
     "zProbeZOffset": 0,
@@ -1116,7 +1116,7 @@ Values must be in range 1..255
     "doorPin": -1,
     "doorEndstop": 0,
     "zhomePreRaise": 2,
-    "zhomePreRaiseDistance": 10,
+    "zhomePreRaiseDistance": 5,
     "uiAnimation": "0",
     "uiPresetBedTempPLA": 60,
     "uiPresetBedABS": 110,
