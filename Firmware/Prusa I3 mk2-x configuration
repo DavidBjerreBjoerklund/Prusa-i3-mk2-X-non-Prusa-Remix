@@ -1,0 +1,58 @@
+Prusa I3 mk2-x configuration
+
+#define DEFAULT_AXIS_STEPS_PER_UNIT   
+{
+	80 			// X default value 1/16th 1.8deg stepper
+	80 			// Y default value 1/16th 1.8deg stepper
+	3980 		// z-axis m8 rods
+	12800.00/8  // T8 4 thread 2mm pitch 0.9 stepper, 1/64 
+	300 		// Extruder reprap
+	3348.36 	// Extruder titan 400steps 400 * 64 * 3 / (7.3 * 3.142)
+}
+
+// Endstops
+#define ENDSTOPPULLUPS
+
+	//or use
+	#if DISABLED(ENDSTOPPULLUPS)
+	    // fine endstop settings: Individual pullups. will be ignored if ENDSTOPPULLUPS is defined
+	    //#define ENDSTOPPULLUP_XMAX
+	    //#define ENDSTOPPULLUP_YMAX
+	    //#define ENDSTOPPULLUP_ZMAX
+	    //#define ENDSTOPPULLUP_XMIN
+	    //#define ENDSTOPPULLUP_YMIN
+	    #define ENDSTOPPULLUP_ZMIN
+	    //#define ENDSTOPPULLUP_ZMIN_PROBE
+	#endif
+
+#define Z_MIN_ENDSTOP_INVERTING false 
+
+#define FIX_MOUNTED_PROBE // enable fix mounted probe
+
+#define X_PROBE_OFFSET_FROM_EXTRUDER 0
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -30
+
+#define Z_PROBE_OFFSET_FROM_EXTRUDER 0
+
+#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+
+#define Z_MIN_PROBE_REPEATABILITY_TEST
+
+
+// Repetier base config
+
+http://doku.radds.org/dokumentation/firmware/arduino/repetier/
+
+
+//Titan extruder
+
+Steps per Unit (Extruder) = Motor Steps * Micro-stepping * Gear Ratio / (Hobb Diameter * Pi)
+
+3348.36
+
+//e3d volcano
+Software setup  0.80mm nozzle, with 0.60mm
+#define EXT0_TEMPSENSOR_TYPE 8 (ATC Semitec 104-GT2)
+Set the Minimum defect temperature
+
+MAX_PWM" to be set over 150
