@@ -67,7 +67,7 @@
 #define DRIVE_SYSTEM 0
 #define XAXIS_STEPS_PER_MM 672.27
 #define YAXIS_STEPS_PER_MM 672.27
-#define ZAXIS_STEPS_PER_MM 3200
+#define ZAXIS_STEPS_PER_MM 1616
 #define EXTRUDER_FAN_COOL_TEMP 50
 #define PDM_FOR_EXTRUDER 0
 #define PDM_FOR_COOLER 0
@@ -103,9 +103,9 @@
 #define EXT0_WATCHPERIOD 1
 #define EXT0_PID_INTEGRAL_DRIVE_MAX 230
 #define EXT0_PID_INTEGRAL_DRIVE_MIN 40
-#define EXT0_PID_PGAIN_OR_DEAD_TIME 13.33
-#define EXT0_PID_I 0.77
-#define EXT0_PID_D 57.02
+#define EXT0_PID_PGAIN_OR_DEAD_TIME 14.45
+#define EXT0_PID_I 1
+#define EXT0_PID_D 52.18
 #define EXT0_PID_MAX 255
 #define EXT0_ADVANCE_K 0
 #define EXT0_ADVANCE_L 0
@@ -172,9 +172,9 @@
 #define HEATED_BED_HEAT_MANAGER 1
 #define HEATED_BED_PID_INTEGRAL_DRIVE_MAX 255
 #define HEATED_BED_PID_INTEGRAL_DRIVE_MIN 80
-#define HEATED_BED_PID_PGAIN_OR_DEAD_TIME   196
-#define HEATED_BED_PID_IGAIN   33
-#define HEATED_BED_PID_DGAIN 290
+#define HEATED_BED_PID_PGAIN_OR_DEAD_TIME   732.1
+#define HEATED_BED_PID_IGAIN   228.96
+#define HEATED_BED_PID_DGAIN 585.22
 #define HEATED_BED_PID_MAX 255
 #define HEATED_BED_DECOUPLE_TEST_PERIOD 300000
 #define MIN_EXTRUDER_TEMP 150
@@ -276,7 +276,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define ENDSTOP_Z_RETEST_REDUCTION_FACTOR 3
 #define ENDSTOP_X_BACK_ON_HOME -8
 #define ENDSTOP_Y_BACK_ON_HOME -2.8
-#define ENDSTOP_Z_BACK_ON_HOME 0.46
+#define ENDSTOP_Z_BACK_ON_HOME -2
 #define ALWAYS_CHECK_ENDSTOPS 0
 #define MOVE_X_WHEN_HOMED 0
 #define MOVE_Y_WHEN_HOMED 0
@@ -441,18 +441,18 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define UI_BED_COATING 0
 #define FEATURE_Z_PROBE 1
 #define EXTRUDER_IS_Z_PROBE 0
-#define Z_PROBE_BED_DISTANCE 5
+#define Z_PROBE_BED_DISTANCE 10
 #define Z_PROBE_PIN ORIG_Z_MIN_PIN
 #define Z_PROBE_PULLUP 1
 #define Z_PROBE_ON_HIGH 1
 #define Z_PROBE_X_OFFSET 0
 #define Z_PROBE_Y_OFFSET -28.05
 #define Z_PROBE_WAIT_BEFORE_TEST 0
-#define Z_PROBE_SPEED 5
+#define Z_PROBE_SPEED 10
 #define Z_PROBE_XY_SPEED 150
-#define Z_PROBE_SWITCHING_DISTANCE 0.5
+#define Z_PROBE_SWITCHING_DISTANCE 2
 #define Z_PROBE_REPETITIONS 3
-#define Z_PROBE_HEIGHT 0.46
+#define Z_PROBE_HEIGHT 0.65
 #define Z_PROBE_START_SCRIPT ""
 #define Z_PROBE_FINISHED_SCRIPT ""
 #define Z_PROBE_RUN_AFTER_EVERY_PROBE ""
@@ -563,7 +563,7 @@ Values must be in range 1..255
     "bluetoothBaudrate": 115200,
     "xStepsPerMM": 672.27,
     "yStepsPerMM": 672.27,
-    "zStepsPerMM": 3200,
+    "zStepsPerMM": 1616,
     "xInvert": "0",
     "xInvertEnable": "1",
     "eepromMode": 1,
@@ -587,9 +587,9 @@ Values must be in range 1..255
             "invertEnable": "1",
             "acceleration": 5000,
             "watchPeriod": 1,
-            "pidP": 13.33,
-            "pidI": 0.77,
-            "pidD": 57.02,
+            "pidP": 14.45,
+            "pidI": 1,
+            "pidD": 52.18,
             "advanceK": 0,
             "advanceL": 0,
             "waitRetractTemp": 150,
@@ -689,7 +689,7 @@ Values must be in range 1..255
     "zHomeDir": "-1",
     "xEndstopBack": -8,
     "yEndstopBack": -2.8,
-    "zEndstopBack": 0.46,
+    "zEndstopBack": -2,
     "deltaSegmentsPerSecondPrint": 180,
     "deltaSegmentsPerSecondTravel": 70,
     "deltaDiagonalRod": 445,
@@ -804,9 +804,9 @@ Values must be in range 1..255
     "bedUpdateInterval": 5000,
     "bedPidDriveMin": 80,
     "bedPidDriveMax": 255,
-    "bedPidP": 196,
-    "bedPidI": 33,
-    "bedPidD": 290,
+    "bedPidP": 732.1,
+    "bedPidI": 228.96,
+    "bedPidD": 585.22,
     "bedPidMax": 255,
     "bedDecoupleTestPeriod": 300,
     "caseLightPin": 25,
@@ -876,15 +876,15 @@ Values must be in range 1..255
     "fanThermoThermistorType": 1,
     "scalePidToMax": 0,
     "zProbePin": "ORIG_Z_MIN_PIN",
-    "zProbeBedDistance": 5,
+    "zProbeBedDistance": 10,
     "zProbePullup": "1",
     "zProbeOnHigh": "1",
     "zProbeXOffset": 0,
     "zProbeYOffset": -28.05,
     "zProbeWaitBeforeTest": "0",
-    "zProbeSpeed": 5,
+    "zProbeSpeed": 10,
     "zProbeXYSpeed": 150,
-    "zProbeHeight": 0.46,
+    "zProbeHeight": 0.65,
     "zProbeStartScript": "",
     "zProbeFinishedScript": "",
     "featureAutolevel": "1",
@@ -894,7 +894,7 @@ Values must be in range 1..255
     "zProbeY2": 20,
     "zProbeX3": 100,
     "zProbeY3": 160,
-    "zProbeSwitchingDistance": 0.5,
+    "zProbeSwitchingDistance": 2,
     "zProbeRepetitions": 3,
     "zProbeEveryPoint": "",
     "sdSupport": "0",
