@@ -103,9 +103,9 @@
 #define EXT0_WATCHPERIOD 1
 #define EXT0_PID_INTEGRAL_DRIVE_MAX 230
 #define EXT0_PID_INTEGRAL_DRIVE_MIN 40
-#define EXT0_PID_PGAIN_OR_DEAD_TIME 14.45
-#define EXT0_PID_I 1
-#define EXT0_PID_D 52.18
+#define EXT0_PID_PGAIN_OR_DEAD_TIME 14.53
+#define EXT0_PID_I 1.15
+#define EXT0_PID_D 45.9
 #define EXT0_PID_MAX 255
 #define EXT0_ADVANCE_K 0
 #define EXT0_ADVANCE_L 0
@@ -374,6 +374,8 @@ It also can add a delay to wait for spindle to run on full speed.
 #define LOW_TICKS_PER_MOVE 250000
 #define EXTRUDER_SWITCH_XY_SPEED 100
 #define DUAL_X_AXIS 0
+#define DUAL_X_RESOLUTION 0
+#define X2AXIS_STEPS_PER_MM 100
 #define FEATURE_TWO_XSTEPPER 0
 #define X2_STEP_PIN   ORIG_E1_STEP_PIN
 #define X2_DIR_PIN    ORIG_E1_DIR_PIN
@@ -409,7 +411,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define KEEP_ALIVE_INTERVAL 2000
 #define WAITING_IDENTIFIER "wait"
 #define ECHO_ON_EXECUTE 1
-#define EEPROM_MODE 1
+#define EEPROM_MODE 2
 #undef PS_ON_PIN
 #define PS_ON_PIN -1
 #define JSON_OUTPUT 0
@@ -445,14 +447,14 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_PIN ORIG_Z_MIN_PIN
 #define Z_PROBE_PULLUP 1
 #define Z_PROBE_ON_HIGH 1
-#define Z_PROBE_X_OFFSET 0
-#define Z_PROBE_Y_OFFSET -28.05
+#define Z_PROBE_X_OFFSET 4.3
+#define Z_PROBE_Y_OFFSET -30
 #define Z_PROBE_WAIT_BEFORE_TEST 0
 #define Z_PROBE_SPEED 10
 #define Z_PROBE_XY_SPEED 150
 #define Z_PROBE_SWITCHING_DISTANCE 2
 #define Z_PROBE_REPETITIONS 3
-#define Z_PROBE_HEIGHT 0.65
+#define Z_PROBE_HEIGHT 1.5
 #define Z_PROBE_START_SCRIPT ""
 #define Z_PROBE_FINISHED_SCRIPT ""
 #define Z_PROBE_RUN_AFTER_EVERY_PROBE ""
@@ -464,7 +466,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_Y1 20
 #define Z_PROBE_X2 160
 #define Z_PROBE_Y2 20
-#define Z_PROBE_X3 100
+#define Z_PROBE_X3 20
 #define Z_PROBE_Y3 160
 #define BED_LEVELING_METHOD 1
 #define BED_CORRECTION_METHOD 0
@@ -566,7 +568,7 @@ Values must be in range 1..255
     "zStepsPerMM": 1616,
     "xInvert": "0",
     "xInvertEnable": "1",
-    "eepromMode": 1,
+    "eepromMode": 2,
     "yInvert": "1",
     "yInvertEnable": "1",
     "zInvert": "0",
@@ -587,9 +589,9 @@ Values must be in range 1..255
             "invertEnable": "1",
             "acceleration": 5000,
             "watchPeriod": 1,
-            "pidP": 14.45,
-            "pidI": 1,
-            "pidD": 52.18,
+            "pidP": 14.53,
+            "pidI": 1.15,
+            "pidD": 45.9,
             "advanceK": 0,
             "advanceL": 0,
             "waitRetractTemp": 150,
@@ -879,12 +881,12 @@ Values must be in range 1..255
     "zProbeBedDistance": 10,
     "zProbePullup": "1",
     "zProbeOnHigh": "1",
-    "zProbeXOffset": 0,
-    "zProbeYOffset": -28.05,
+    "zProbeXOffset": 4.3,
+    "zProbeYOffset": -30,
     "zProbeWaitBeforeTest": "0",
     "zProbeSpeed": 10,
     "zProbeXYSpeed": 150,
-    "zProbeHeight": 0.65,
+    "zProbeHeight": 1.5,
     "zProbeStartScript": "",
     "zProbeFinishedScript": "",
     "featureAutolevel": "1",
@@ -892,7 +894,7 @@ Values must be in range 1..255
     "zProbeY1": 20,
     "zProbeX2": 160,
     "zProbeY2": 20,
-    "zProbeX3": 100,
+    "zProbeX3": 20,
     "zProbeY3": 160,
     "zProbeSwitchingDistance": 2,
     "zProbeRepetitions": 3,
@@ -987,7 +989,12 @@ Values must be in range 1..255
             "speed": 10,
             "dirPin": -1,
             "stepPin": -1,
-            "enablePin": -1
+            "enablePin": -1,
+            "endstopPin": -1,
+            "invertEndstop": "0",
+            "minEndstop": "1",
+            "endstopPullup": "1",
+            "maxDistance": 20
         },
         {
             "t": "None",
@@ -998,7 +1005,12 @@ Values must be in range 1..255
             "speed": 10,
             "dirPin": -1,
             "stepPin": -1,
-            "enablePin": -1
+            "enablePin": -1,
+            "endstopPin": -1,
+            "invertEndstop": "0",
+            "minEndstop": "1",
+            "endstopPullup": "1",
+            "maxDistance": 20
         },
         {
             "t": "None",
@@ -1009,7 +1021,12 @@ Values must be in range 1..255
             "speed": 10,
             "dirPin": -1,
             "stepPin": -1,
-            "enablePin": -1
+            "enablePin": -1,
+            "endstopPin": -1,
+            "invertEndstop": "0",
+            "minEndstop": "1",
+            "endstopPullup": "1",
+            "maxDistance": 20
         },
         {
             "t": "None",
@@ -1020,7 +1037,12 @@ Values must be in range 1..255
             "speed": 10,
             "dirPin": -1,
             "stepPin": -1,
-            "enablePin": -1
+            "enablePin": -1,
+            "endstopPin": -1,
+            "invertEndstop": "0",
+            "minEndstop": "1",
+            "endstopPullup": "1",
+            "maxDistance": 20
         },
         {
             "t": "None",
@@ -1031,7 +1053,12 @@ Values must be in range 1..255
             "speed": 10,
             "dirPin": -1,
             "stepPin": -1,
-            "enablePin": -1
+            "enablePin": -1,
+            "endstopPin": -1,
+            "invertEndstop": "0",
+            "minEndstop": "1",
+            "endstopPullup": "1",
+            "maxDistance": 20
         },
         {
             "t": "None",
@@ -1042,7 +1069,12 @@ Values must be in range 1..255
             "speed": 10,
             "dirPin": -1,
             "stepPin": -1,
-            "enablePin": -1
+            "enablePin": -1,
+            "endstopPin": -1,
+            "invertEndstop": "0",
+            "minEndstop": "1",
+            "endstopPullup": "1",
+            "maxDistance": 20
         }
     ],
     "manualConfig": "",
@@ -1117,6 +1149,8 @@ Values must be in range 1..255
     "doorEndstop": 0,
     "zhomePreRaise": 2,
     "zhomePreRaiseDistance": 5,
+    "dualXResolution": "0",
+    "x2axisStepsPerMM": 100,
     "uiAnimation": "0",
     "uiPresetBedTempPLA": 60,
     "uiPresetBedABS": 110,
